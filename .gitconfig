@@ -1,0 +1,61 @@
+[user]
+    name = Your Name
+    email = your.email@example.com
+
+[core]
+    editor = nano  # Change to your preferred editor
+    autocrlf = input  # Handles line endings in cross-platform environments
+
+[alias]
+    # Shortcuts for common Git commands
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
+    hist = log --oneline --graph --decorate --all
+    type = cat-file -t
+    dump = cat-file -p
+
+    # View the history of changes to a file
+    lg = log --oneline --decorate --graph --all
+
+    # View detailed log with diffs
+    ll = log --stat --oneline
+
+    # Show changes in the working directory (including untracked files)
+    s = status -s
+
+    # Add all changes (including untracked files)
+    aa = add --all
+
+    # Commit with message
+    cm = commit -m
+
+    # Amend the last commit
+    amend = commit --amend --no-edit
+
+    # Fetch from all remotes
+    fa = fetch --all
+
+    # Prune and clean up branches
+    prune = fetch --prune
+    cleanup = "!git remote prune origin && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+    # Push the current branch to origin
+    po = push origin HEAD
+
+    # Rebase interactively
+    ri = rebase -i
+
+    # Stash changes
+    stsh = stash
+    stshp = stash pop
+
+    # Show recent commits
+    recent = log --pretty=format:\"%h %s\" --date=short --graph
+
+[push]
+    default = simple  # Simple push behavior (only push the current branch)
+
+[diff]
+    tool = meld  # Set your preferred diff tool
